@@ -1,0 +1,4 @@
+API_LAYER="System"
+ASSET_ID="email-system-api"
+ASSET_VERSION="1.0.1"
+TARGET="GON-PS"
