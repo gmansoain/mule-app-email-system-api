@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:email="http://www.mulesoft.org/schema/mule/email"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/email http://www.mulesoft.org/schema/mule/email/current/mule-email.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+
+	<flow name="sendEmail" doc:id="ddf5069f-faab-486c-bece-205d38f31817" >
+		<email:send doc:name="Send Email" doc:id="e4402099-3723-4e40-a6f0-e9d148e83c60" toAddresses='#[[payload.to]]' config-ref="Email_SMTP" fromAddress="#[payload.from]" subject="#[payload.subject]" replyToAddresses="#[[payload.from]]">
+			<email:body contentType="text/plain">
+				<email:content ><![CDATA[#[payload.message]]]></email:content>
+			</email:body>
+		</email:send>
+	</flow>
+
+</mule>

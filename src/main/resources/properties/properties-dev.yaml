@@ -1,0 +1,30 @@
+# API Info
+api:
+  name: "${project.artifactId}"
+  version: "${project.version}"
+
+#Connectors
+http:
+  host: "0.0.0.0"
+  port: "8081"
+  
+https:
+  host: "0.0.0.0"
+  port: "8081"
+  
+email:
+  host: "smtp.gmail.com"
+  port: "587"
+  user: "gmansoain@gmail.com"
+  password: "rmoi xlsn kvym fngz"
+
+# Errors Description
+errors:
+  api-kit:
+    error-code-400: "GON - BAD REQUEST"
+    error-code-404: "GON - NOT_FOUND"
+    error-code-405: "GON - METHOD_NOT_ALLOWED"
+    error-code-406: "GON - NOT_ACCEPTABLE"
+    error-code-415: "GON - UNSUPPORTED_MEDIA_TYPE"
+    error-code-500: "GON - INTERNAL_SERVER_ERROR"
+    error-code-501: "GON - NOT_IMPLEMENTED"

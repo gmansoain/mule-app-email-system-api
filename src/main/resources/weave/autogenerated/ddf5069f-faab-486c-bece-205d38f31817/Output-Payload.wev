@@ -1,0 +1,8 @@
+%dw 2.0
+
+type auto_ddf5069f_faab_486c_bece_205d38f31817_Output_Payload = {
+  responseMessage: String, 
+  responseCode: Number, 
+  _?: Any
+}
+

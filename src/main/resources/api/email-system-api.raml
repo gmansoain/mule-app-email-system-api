@@ -1,0 +1,24 @@
+#%RAML 1.0
+title: Email System API
+mediaType: 
+- application/json
+
+uses:
+  common: /exchange_modules/fc9e3283-a489-4e88-99aa-cceea4aa5ea1/gon-common-api-fragments/1.0.4/gon-common-api-fragments.raml
+
+types:
+  Email: !include datatypes/Email.raml
+  Response201: !include datatypes/Response201.raml
+
+/message:
+  post:
+    is: [common.client-id-required, common.error-responses]
+    description: Send a New Email
+    displayName: Send Email
+    body:
+      type: Email
+    responses:
+      201:
+        body:
+          type: Response201
+          

@@ -1,0 +1,10 @@
+%dw 2.0
+
+type auto_ddf5069f_faab_486c_bece_205d38f31817_Input_Payload = {
+  subject: String, 
+  from: String, 
+  to: String, 
+  message: String, 
+  _?: Any
+}
+
