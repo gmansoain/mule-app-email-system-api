@@ -102,4 +102,10 @@ jobs:
     # Run tests
     - name: Run tests
       run: |
-        newman run .postman/testing/dev/health-monitoring-api-dev-testing-collection.json -e .postman/testing/dev/health-monitoring-api-dev-testing-environment.json   
+        newman run .postman/testing/dev/collection.json -e .postman/testing/dev/environment.json -r htmlextra --reporter-htmlextra-export .postman/testing/dev/testResults/htmlreport.html --reporter-htmlextra-darkTheme > .postman/testing/dev/testResults/runreport1.html    
+
+    - name: Output the run Details
+      uses: actions/upload-artifact@v2
+      with:
+          name: RunReports
+          path: .postman/testing/dev/testResults
