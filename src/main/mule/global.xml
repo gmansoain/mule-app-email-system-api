@@ -20,6 +20,6 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 	</http:listener-config>
 	<configuration-properties doc:name="Configuration properties" doc:id="43955e16-17b7-4941-8f53-4140c427b7c1" file="properties/properties-${env}.yaml" />
 	<global-property doc:name="Global Property" doc:id="2f131287-016f-4777-9daa-3f67205906c7" name="env" value="${env}" />
-	<api-gateway:autodiscovery apiId="19104087" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="9a6893d9-57fd-4729-a183-4eca2423f31d" flowRef="email-system-api-main"/>
+	<api-gateway:autodiscovery apiId="${api.id}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="9a6893d9-57fd-4729-a183-4eca2423f31d" flowRef="email-system-api-main"/>
 
 </mule>
