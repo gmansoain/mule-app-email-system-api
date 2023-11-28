@@ -1,0 +1,29 @@
+name: Functional Testing
+on:
+  workflow_dispatch:
+
+jobs: 
+  functionalTesting:
+    runs-on: ubuntu-latest
+    environment: Development
+    steps:
+    - uses: actions/checkout@v4
+      # Install Node on the runner
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
+      # Install Newman
+    - name: Install Newman
+      run: |
+        npm install -g newman
+        npm install -g newman-reporter-htmlextra
+      # Run tests
+    - name: Run tests
+      run: |
+        newman run .postman/testing/dev/collection.json -e .postman/testing/dev/environment.json -r htmlextra --reporter-htmlextra-export .postman/testing/dev/testResults/htmlreport.html --reporter-htmlextra-darkTheme > .postman/testing/dev/testResults/runreport1.html  
+      # Upload the results
+    - name: Output the run Details
+      uses: actions/upload-artifact@v2
+      with:
+          name: RunReports
+          path: .postman/testing/dev/testResults
